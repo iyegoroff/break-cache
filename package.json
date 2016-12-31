@@ -1,0 +1,44 @@
+{
+  "name": "break-cache",
+  "version": "0.0.0",
+  "description": "CLI tool for adding timestamps to matched URLs.",
+  "main": "break-cache.js",
+  "scripts": {
+    "preversion": "npm run reinstall && npm t",
+    "postversion": "git add -A . && git push && git push --tags",
+    "reinstall": "rm -rf node_modules && npm i",
+    "test": "npm run lint && intern-client config=build/tests/intern",
+    "lint": "eslint break-cache.js tests/**/*.js",
+    "coverage": "cat coverage/lcov.info | coveralls"
+  },
+  "files": [
+    "break-cache.js"
+  ],
+  "bin": {
+    "break-cache": "./break-cache.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iyegoroff/break-cache.git"
+  },
+  "keywords": [
+    "cache-breaker"
+  ],
+  "author": "iyegoroff <iegoroff@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iyegoroff/break-cache/issues"
+  },
+  "homepage": "https://github.com/iyegoroff/break-cache#readme",
+  "devDependencies": {
+    "coveralls": "^2.11.15",
+    "eslint": "^3.12.2",
+    "intern": "^3.4.2",
+    "semistandard": "^9.2.1"
+  },
+  "dependencies": {
+    "command-line-args": "^3.0.5",
+    "command-line-usage": "^3.0.8",
+    "prmzfy": "^1.2.6"
+  }
+}

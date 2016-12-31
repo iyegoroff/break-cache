@@ -1,0 +1,34 @@
+language: node_js
+
+node_js:
+  - '7'
+  - '4'
+
+addons:
+  sauce_connect: true
+
+branches:
+  only:
+    - master
+    - /^v\d+\.\d+\.\d+$/
+
+deploy:
+  provider: npm
+  email: iegoroff@gmail.com
+  api_key:
+    secure: >
+      oB4A7gHqohYV4moH8Su/QtHwFofQGmfPbxW1VJTwkIBg/nIXtceyzGxou+VaVS3ZshDufKd8UrowJCvvoQ9Mo0LRtrQ8jQDG5UH4+yuId1ADeWX7C
+      jRbwkcZfsOLdmj6h3iSXF+4f/4Ssu0hECUN5UpmGzVxnXW5VEtWsyfkfdX+xwiZlSYuFBL1yQjFlDONQPPRf1uIggLDJ+4u8xMZTbXPMyAFw5RP9J
+      K1vLjgytFi1jrFTiqqWrnvUHnRQzXR76mbh9LsEpS9e7E9WzWbz7RUD9V8Nom8yQ/rqgO25jVtHtWGpqiKPA3Ay2xdxtDesUIJXx1h9WllkkbUOyW
+      4tarEe6ncanboWPuO0EkKdxhOCO+qxdkV1pgnjdDiWwOVUU0aFcd2y+StXHXKe0arBjSmaVU7LAzPIbvpGRD3wYmf242fRBCZoK1KQFkVcozheQg9
+      mzG1+hj4KSzfq7UIJMUwqL/zFB2nq8bWzBB1Zu5d7LPyMTG/u3Jyrpz22Lr+QVKsoz95nOuW+iwMbOsziZoCfqKyYEveicPL04lyGOhA5DVZDXxg6
+      d68maCTSkbnpcOSDym/p1mc0yfhrrxYvVyNDfoFTUo1aedXnSyV/W46xScGlDnlwGmb8ia3a0p9Y8f/+zxUioXR6fELxUhUctSVX7n57yj6lfSwSu
+      jTbao=
+  on:
+    tags: true
+
+script:
+  npm test
+
+after_script:
+  npm run coverage
