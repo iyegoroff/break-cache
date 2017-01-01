@@ -4,7 +4,7 @@
   "description": "Generic cache breaker",
   "main": "break-cache.js",
   "scripts": {
-    "preversion": "npm run reinstall && npm run lint && npm t && npm run break-cache && git commit -am \"[skip ci] readme\"",
+    "preversion": "npm run reinstall && npm run lint && npm t && npm run break-cache-commit",
     "postversion": "git add -A . && git push && git push --tags",
     "reinstall": "npm run clean && shx rm -rf node_modules && npm i",
     "clean": "shx rm -rf .nyc_output coverage",
@@ -13,7 +13,8 @@
     "posttest": "shx rm -rf test/temp",
     "lint": "eslint break-cache.js tests/*.js",
     "coverage": "cat coverage/lcov.info | coveralls",
-    "break-cache": "node ./break-cache-cli.js -i README.md -m \"\\.svg(?=[^'])\" -o README.md"
+    "break-cache": "node ./break-cache-cli.js -i README.md -m \"\\.svg(?=[^'])\" -o README.md",
+    "break-cache-commit": "npm run break-cache && git commit -am \"[skip ci] readme cache break\""
   },
   "files": [
     "break-cache.js"
