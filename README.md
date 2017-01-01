@@ -17,8 +17,10 @@ $ npm i break-cache
 
 ## Usage
 
+### CLI
+
 ```bash
-$ break-cache --input file [other options]
+$ break-cache --input file [--match pattern] [--output file] [--param name]
 ```
 
 options:<br/>
@@ -26,6 +28,16 @@ options:<br/>
 `-m, --match` - regexp for searching URLs inside input file<br/>
 `-o, --output` - output file (default: STDOUT)<br/>
 `-p, --param` - timestamp query parameter name (default: t)<br/>
+
+### API
+
+```javascript
+const breakCache = require('break-cache');
+
+// options: { input: string, match?: RegExp, output?: string, param?: string }
+// streamOrCallback?: stream.Writable | ((err, data) => void)
+breakCache(options, stream);
+```
 
 ## Example
 

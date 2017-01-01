@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const querystring = require('querystring');
-const prmzfy = require('prmzfy');
 const commandLineArgs = require('command-line-args');
 const commandLineUsage = require('command-line-usage');
+const breakCache = require('./break-cache');
 
 const optionDefs = [
     {
@@ -17,8 +15,8 @@ const optionDefs = [
     {
         name: 'match',
         alias: 'm',
-        type: RegExp,
-        typeLabel: '[underline]{regexp}',
+        type: String,
+        typeLabel: '[underline]{pattern}',
         description: 'regexp for searching URLs inside input file'
     },
     {
@@ -39,35 +37,34 @@ const optionDefs = [
 
 const sections = [
     {
-        header: 'Generic cache breaker',
+        header: 'Break cache',
         content: 'Adds timestamps to matched URLs.'
     },
     {
         header: 'Syntax',
         content: '$ break-cache ' +
-            '[bold]{-i} [underline]{file} ' +
-            '[[bold]{-m} [underline]{pattern}] ' +
-            '[[bold]{-o} [underline]{file}] ' +
-            '[[bold]{-p} [underline]{name}]'
+            '[bold]{--input} [underline]{file} ' +
+            '[[bold]{--match} [underline]{pattern}] ' +
+            '[[bold]{--output} [underline]{file}] ' +
+            '[[bold]{--param} [underline]{name}]'
     },
     {
         header: 'Options',
         optionList: optionDefs
     },
     {
-        header: 'Example',
-        content: '$ break-cache README.md -m \\.svg -o README.md'
+        header: 'Examples',
+        content: [
+            'These commands are equivalent:',
+            '',
+            '$ break-cache README.md -m \\\\.svg -o README.md',
+            '$ break-cache README.md -m \'\\.svg\' -o README.md'
+        ]
     }
 ];
 
-const options = commandLineArgs(optionDefs);
-const usage = commandLineUsage(sections);
-
-const api = (options) => {
-    return options;
-};
-
-console.log(usage);
-api(options);
-
-module.exports = api;
+try {
+    breakCache(commandLineArgs(optionDefs), process.stdout);
+} catch (e) {
+    console.log(commandLineUsage(sections));
+}
