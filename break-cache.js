@@ -5,7 +5,12 @@ const prmzfy = require('prmzfy');
 const readFile = prmzfy(fs.readFile);
 const writeFile = prmzfy(fs.writeFile);
 
-module.exports = ({ input, match, output, param = 't' }, streamOrCallback) => {
+module.exports = (options, streamOrCallback) => {
+    const input = options.input;
+    const match = options.match;
+    const output = options.output;
+    const param = options.param || 't';
+
     if (!input) {
         throw new Error('input file is required');
     }
