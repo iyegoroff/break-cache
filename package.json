@@ -4,7 +4,7 @@
   "description": "Generic cache breaker",
   "main": "break-cache.js",
   "scripts": {
-    "preversion": "npm run reinstall && npm run lint && npm t && npm run break-cache",
+    "preversion": "npm run reinstall && npm run lint && npm t && npm run break-cache && git commit -am \"[skip ci] readme\"",
     "postversion": "git add -A . && git push && git push --tags",
     "reinstall": "npm run clean && shx rm -rf node_modules && npm i",
     "clean": "shx rm -rf .nyc_output coverage",
