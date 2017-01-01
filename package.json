@@ -6,7 +6,7 @@
   "scripts": {
     "preversion": "npm run reinstall && npm run lint && npm t && npm run break-cache",
     "postversion": "git add -A . && git push && git push --tags",
-    "reinstall": "shx rm -rf node_modules && npm run clean && npm i",
+    "reinstall": "npm run clean && shx rm -rf node_modules && npm i",
     "clean": "shx rm -rf .nyc_output coverage",
     "pretest": "shx mkdir -p test/temp",
     "test": "tap test/*.js --cov --coverage-report=lcov",
