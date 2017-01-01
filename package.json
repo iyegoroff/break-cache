@@ -17,7 +17,8 @@
     "break-cache-commit": "npm run break-cache && git commit -am \"[skip ci] readme cache break\""
   },
   "files": [
-    "break-cache.js"
+    "break-cache.js",
+    "break-cache-cli.js"
   ],
   "bin": {
     "break-cache": "./break-cache-cli.js"
