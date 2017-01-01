@@ -1,11 +1,11 @@
 break-cache
 =========
-[![npm version](https://badge.fury.io/js/break-cache.svg?t=1483305971533)](https://badge.fury.io/js/break-cache)
-[![Build Status](https://travis-ci.org/iyegoroff/break-cache.svg?t=1483305971533&branch=master)](https://travis-ci.org/iyegoroff/break-cache)
-[![Coverage Status](https://coveralls.io/repos/github/iyegoroff/break-cache/badge.svg?t=1483305971533&branch=master)](https://coveralls.io/github/iyegoroff/break-cache?branch=master)
-[![Dependency Status](https://david-dm.org/iyegoroff/break-cache/status.svg?t=1483305971533)](https://david-dm.org/iyegoroff/break-cache)
-[![devDependency Status](https://david-dm.org/iyegoroff/break-cache/dev-status.svg?t=1483305971533)](https://david-dm.org/iyegoroff/break-cache#info=devDependencies)
-[![npm](https://img.shields.io/npm/l/express.svg?t=1483305971533)](https://www.npmjs.com/package/break-cache)
+[![npm version](https://badge.fury.io/js/break-cache.svg?t=1483306793646)](https://badge.fury.io/js/break-cache)
+[![Build Status](https://travis-ci.org/iyegoroff/break-cache.svg?t=1483306793646&branch=master)](https://travis-ci.org/iyegoroff/break-cache)
+[![Coverage Status](https://coveralls.io/repos/github/iyegoroff/break-cache/badge.svg?t=1483306793646&branch=master)](https://coveralls.io/github/iyegoroff/break-cache?branch=master)
+[![Dependency Status](https://david-dm.org/iyegoroff/break-cache/status.svg?t=1483306793646)](https://david-dm.org/iyegoroff/break-cache)
+[![devDependency Status](https://david-dm.org/iyegoroff/break-cache/dev-status.svg?t=1483306793646)](https://david-dm.org/iyegoroff/break-cache#info=devDependencies)
+[![npm](https://img.shields.io/npm/l/express.svg?t=1483306793646)](https://www.npmjs.com/package/break-cache)
 
 Searches strings inside input file and adds (or updates) current timestamp to these strings as URL query parameter.
 
