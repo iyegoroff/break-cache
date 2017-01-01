@@ -56,3 +56,13 @@ t.test('should update file with timestamps', t => {
         })
         .catch(err => t.fail(err.toString()));
 });
+
+t.test('should return write error', t => {
+    const output = 'test/tmp/readme.txt';
+
+    prmzfy(breakCache)({ input: 'test/fixtures/readme.txt', match: '\\.svg', output })
+        .catch(err => {
+            t.equal(err.toString(), `Error: ENOENT: no such file or directory, open '${output}'`);
+            t.end();
+        });
+});

@@ -35,10 +35,17 @@ module.exports = (options, streamOrCallback) => {
         )
         .then(data => {
             if (output) {
+                const streamOrCallbackIsFunction = typeof streamOrCallback === 'function';
+
                 writeFile(output, data)
                     .then(() => {
-                        if (typeof streamOrCallback === 'function') {
-                            streamOrCallback(null);
+                        if (streamOrCallbackIsFunction) {
+                            streamOrCallback(null, data);
+                        }
+                    })
+                    .catch(err => {
+                        if (streamOrCallbackIsFunction) {
+                            streamOrCallback(err);
                         }
                     });
             } else if (streamOrCallback instanceof stream.Writable) {
