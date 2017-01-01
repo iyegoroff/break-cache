@@ -19,7 +19,7 @@ module.exports = (options, streamOrCallback) => {
 
     readFile(input)
         .then(data => data.toString()
-            .split(new RegExp(`(?=${(match || '').replace(/([^\\])\(/g, '$1(?:')})`, 'g'))
+            .split(new RegExp(`(?=${(match || '').replace(/([^\\])\(([^?])/g, '$1(?:$2')})`, 'g'))
             .map((str, i) => {
                 const updated = str.replace(new RegExp(`(\\?|&)${param}=\\d+`), `$1${param}=${time}`);
 
