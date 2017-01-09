@@ -41,7 +41,7 @@
     "eslint": "^3.12.2",
     "semistandard": "^9.2.1",
     "shx": "^0.2.1",
-    "tap": "^8.0.1"
+    "tap": "^9.0.2"
   },
   "dependencies": {
     "command-line-args": "^3.0.5",
