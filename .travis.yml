@@ -25,7 +25,7 @@ deploy:
     tags: true
 
 script:
-  npm test
+  npm run lint && npm test
 
 after_script:
   npm run coverage
