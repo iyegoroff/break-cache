@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "command-line-args": "^3.0.5",
-    "command-line-usage": "^3.0.8",
+    "command-line-usage": "^4.0.0",
     "prmzfy": "^1.2.6"
   }
 }
