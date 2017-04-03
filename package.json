@@ -39,11 +39,11 @@
   "devDependencies": {
     "coveralls": "^2.11.15",
     "eslint": "^3.12.2",
-    "eslint-config-semistandard": "^7.0.0",
-    "eslint-config-standard": "^6.2.1",
+    "eslint-config-semistandard": "^8.0.0",
+    "eslint-config-standard": "^7.1.0",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
-    "shx": "^0.2.1",
+    "shx": "^0.2.2",
     "tap": "^10.0.2"
   },
   "dependencies": {
