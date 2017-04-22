@@ -47,7 +47,7 @@
     "tap": "^10.0.2"
   },
   "dependencies": {
-    "command-line-args": "^4.0.0",
+    "command-line-args": "^4.0.3",
     "command-line-usage": "^4.0.0",
     "prmzfy": "^1.2.6"
   }
