@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/iyegoroff/break-cache#readme",
   "devDependencies": {
-    "coveralls": "^2.11.15",
+    "coveralls": "^2.13.1",
     "eslint": "^3.12.2",
     "eslint-config-semistandard": "^8.0.0",
     "eslint-config-standard": "^7.1.0",
